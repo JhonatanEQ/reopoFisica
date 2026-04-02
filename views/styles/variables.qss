@@ -1,0 +1,12 @@
+/* variables.qss */
+/* Definición de la paleta de colores Material Premium */
+:root {
+    --bg-dark: #0F1113;
+    --card-bg: #1A1D21;
+    --border-dark: #2A2E33;
+    --cyan-accent: #00E5FF;
+    --amber-accent: #FFC107;
+    --text-main: #FFFFFF;
+    --text-muted: #88929B;
+    --text-sub: #5C666F;
+}

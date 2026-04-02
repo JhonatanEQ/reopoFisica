@@ -1,0 +1,9 @@
+<svg width="220" height="120" viewBox="0 0 220 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Truck Chassis (#FFC107) -->
+  <path d="M10,100 L10,80 L40,80 L40,50 C40,40 50,30 60,30 L60,10 L210,10 L210,100 L180,100 C180,90 160,90 160,100 L60,100 C60,90 40,90 40,100 L10,100 Z" fill="#FFC107" stroke="#FFC107" stroke-width="2" />
+  <!-- Wheels -->
+  <circle cx="50" cy="100" r="12" fill="#2A2A2A" stroke="#FFC107" stroke-width="2"/>
+  <circle cx="170" cy="100" r="12" fill="#2A2A2A" stroke="#FFC107" stroke-width="2"/>
+  <!-- Cab Window (Black) -->
+  <rect x="45" y="40" width="10" height="20" fill="#2A2A2A" rx="2"/>
+</svg>
