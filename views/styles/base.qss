@@ -1,0 +1,50 @@
+/* Global Application Styles */
+QWidget {
+    background-color: #0B0D10;
+    color: #EAEAEA;
+    font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+ 
+QLabel {
+    background-color: transparent;
+    border: none;
+}
+
+QFrame#panel_elevado {
+    background-color: #1E1E1E;
+    border-radius: 16px;
+    border: 1px solid #2A2A2A;
+}
+
+#titulo_principal {
+    font-size: 26px;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin-bottom: 2px;
+}
+
+#subtitulo_principal {
+    font-size: 13px;
+    color: #888888;
+    margin-bottom: 12px;
+}
+
+/* ScrollBars Premium */
+QScrollBar:vertical {
+    background: #0F0F0F;
+    width: 8px;
+    margin: 4px 0;
+    border-radius: 4px;
+}
+QScrollBar::handle:vertical {
+    background: #333333;
+    min-height: 20px;
+    border-radius: 4px;
+}
+QScrollBar::handle:vertical:hover {
+    background: #444444;
+}
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0px;
+}

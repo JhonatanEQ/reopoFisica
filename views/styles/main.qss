@@ -1,0 +1,52 @@
+/* Main Window Specifics and Layout Containers */
+
+#central_widget {
+    background-color: #0B0D10;
+}
+
+#sidebar {
+    background-color: #101214;
+    border-right: 1px solid #202020;
+    min-width: 300px;
+    padding: 15px;
+}
+
+#main_canvas_container {
+    background-color: #0F0F0F;
+    padding: 15px;
+}
+
+/* Caja de Encabezado */
+#encabezado_caja {
+    background-color: #151515;
+    border-radius: 10px;
+    border: 1px solid #252525;
+}
+
+#icono_caja {
+    background-color: rgba(40, 40, 40, 0.8);
+    border-radius: 8px;
+    border: 1px solid #2A2A2A;
+}
+
+QLabel#titulo_encabezado {
+    font-size: 14px;
+    font-weight: 800;
+    color: #00E5FF;
+}
+
+QLabel#titulo_encabezado[es_ambar="true"] {
+    color: #FFC107;
+}
+
+QLabel#subtitulo_encabezado {
+    font-size: 10px;
+    color: #AAAAAA;
+    text-transform: none;
+}
+
+#divisor {
+    background-color: rgba(255, 255, 255, 0.05);
+    height: 1px;
+    margin: 15px 0;
+}

@@ -1,0 +1,58 @@
+/* Cards and Panel Layouts (Results and Controls) */
+
+/* Tarjeta_metrica (Atom) */
+#tarjeta_metrica, QFrame[objectName="tarjeta_metrica"] {
+    background-color: #15181C;
+    border-radius: 12px;
+    border: 1px solid #2A2A2A;
+    padding: 16px 20px;
+    margin: 4px;
+}
+#tarjeta_metrica:hover {
+    border: 1px solid rgba(0, 229, 255, 0.4);
+    background-color: #202020;
+}
+#tarjeta_metrica[es_ambar="true"]:hover {
+    border: 1px solid rgba(255, 193, 7, 0.4);
+}
+
+/* Metric labels inside cards */
+QLabel#resultado_titulo {
+    font-size: 11px;
+    font-weight: 800;
+    color: #888888;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+QLabel#resultado_valor {
+    font-size: 28px;
+    font-weight: 800;
+    color: #00E5FF;
+}
+QLabel#resultado_valor[es_ambar="true"] {
+    color: #FFC107;
+}
+QLabel#resultado_unidad {
+    font-size: 13px;
+    color: #888888;
+    font-weight: 600;
+}
+QLabel#resultado_subtitulo {
+    font-size: 11px;
+    color: #666666;
+    margin-top: 4px;
+}
+
+/* Specific Section Titles */
+QLabel#titulo_seccion {
+    font-size: 14px;
+    font-weight: 800;
+    color: #00E5FF;
+    border-left: 3px solid #00E5FF;
+    padding-left: 10px;
+    margin-bottom: 8px;
+}
+QLabel#titulo_seccion[es_ambar="true"] {
+    color: #FFC107;
+    border-left: 3px solid #FFC107;
+}

@@ -1,0 +1,82 @@
+/* Controls QSS (Sliders, Inputs, Buttons) */
+
+/* QPushButton (Ejecutar Simulación) con Efecto de Resplandor */
+QPushButton {
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #00CFE8, stop:1 #0096A8);
+    color: #000000;
+    border-radius: 12px;
+    font-weight: 900;
+    font-size: 14px;
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 10px;
+}
+QPushButton:hover {
+    background: #00E5FF;
+    /* Glow simulado con borde más brillante */
+    border: 1px solid rgba(0, 229, 255, 0.6);
+}
+
+/* QSlider (Custom Horizontal) */
+QSlider {
+    background: transparent;
+    height: 24px;
+}
+
+QSlider::groove:horizontal {
+    border: none;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1); /* Una línea casi invisible */
+    border-radius: 1px;
+}
+
+QSlider::handle:horizontal {
+    background: #00E5FF;
+    border: none;
+    width: 14px;
+    height: 14px;
+    margin: -6px 0;
+    border-radius: 3px;
+}
+
+QSlider[es_ambar="true"]::handle:horizontal {
+    background: #FFC107;
+}
+
+QSlider::sub-page:horizontal {
+    background: #00E5FF;
+    border: none;
+    border-radius: 1px;
+}
+
+QSlider[es_ambar="true"]::sub-page:horizontal {
+    background: #FFC107;
+    border: none;
+}
+
+/* QDoubleSpinBox (Ghost Input Estilo Original) */
+QDoubleSpinBox {
+    background-color: rgba(30, 30, 30, 0.6);
+    color: #00E5FF;
+    border: 1px solid rgba(0, 229, 255, 0.3);
+    border-radius: 6px;
+    padding: 4px 8px;
+    font-size: 16px;
+    font-weight: 700;
+}
+QDoubleSpinBox[es_ambar="true"] {
+    color: #FFC107;
+    border: 1px solid rgba(255, 193, 7, 0.3);
+}
+QDoubleSpinBox:focus {
+    border: 1px solid #00E5FF;
+    background-color: rgba(30, 30, 30, 0.8);
+}
+QDoubleSpinBox[es_ambar="true"]:focus {
+    border: 1px solid #FFC107;
+}
+
+/* Ocultar flechas para mayor limpieza */
+QDoubleSpinBox::up-button, QDoubleSpinBox::down-button {
+    width: 0px;
+}
