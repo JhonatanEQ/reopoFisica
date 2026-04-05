@@ -2,7 +2,7 @@
 
 /* Tarjeta_metrica (Atom) */
 #tarjeta_metrica, QFrame[objectName="tarjeta_metrica"] {
-    background-color: #1A1A1A;
+    background-color: #15181C;
     border-radius: 12px;
     border: 1px solid #2A2A2A;
     padding: 16px 20px;

@@ -1,11 +1,11 @@
 /* Main Window Specifics and Layout Containers */
 
 #central_widget {
-    background-color: #0F0F0F;
+    background-color: #0B0D10;
 }
 
 #sidebar {
-    background-color: #121212;
+    background-color: #101214;
     border-right: 1px solid #202020;
     min-width: 300px;
     padding: 15px;
@@ -16,7 +16,7 @@
     padding: 15px;
 }
 
-/* Caja de Encabezado (Refinada para evitar recortes) */
+/* Caja de Encabezado */
 #encabezado_caja {
     background-color: #151515;
     border-radius: 10px;
@@ -40,11 +40,10 @@ QLabel#titulo_encabezado[es_ambar="true"] {
 
 QLabel#subtitulo_encabezado {
     font-size: 10px;
-    color: #AAAAAA; /* Un poco más claro para que se lea en el fondo oscuro */
+    color: #AAAAAA;
     text-transform: none;
 }
 
-/* Spacer/Separator */
 #divisor {
     background-color: rgba(255, 255, 255, 0.05);
     height: 1px;

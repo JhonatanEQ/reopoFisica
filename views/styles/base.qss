@@ -1,11 +1,11 @@
 /* Global Application Styles */
 QWidget {
-    background-color: #121212;
-    color: #E0E0E0;
+    background-color: #0B0D10;
+    color: #EAEAEA;
     font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     font-size: 14px;
 }
-
+ 
 QLabel {
     background-color: transparent;
     border: none;
