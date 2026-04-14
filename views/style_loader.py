@@ -10,14 +10,14 @@ class StyleLoader:
         # Orden sugerido: variables, base, controls, cards, main
         order = ["variables.qss", "base.qss", "controls.qss", "cards.qss", "main.qss"]
         
-        # Primero cargamos según el orden si existen
+
         for filename in order:
             filepath = os.path.join(styles_dir, filename)
             if os.path.exists(filepath):
                 with open(filepath, "r", encoding="utf-8") as f:
                     combined_qss += f.read() + "\n"
         
-        # Luego cargamos cualquier otro que no esté en la lista
+
         for filename in os.listdir(styles_dir):
             if filename.endswith(".qss") and filename not in order:
                 filepath = os.path.join(styles_dir, filename)

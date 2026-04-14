@@ -44,8 +44,7 @@ class BarraReproduccion(QFrame):
         layout = QHBoxLayout(self)
         layout.setContentsMargins(20, 0, 20, 0)
         layout.setSpacing(15)
-        
-        # 1. BOTONES DE CONTROL (Iconos Material Design)
+
         self.btn_play = QPushButton()
         self.btn_play.setIcon(qta.icon("mdi6.play", color="#00E5FF"))
         self.btn_play.setIconSize(QSize(30, 30))
@@ -55,8 +54,7 @@ class BarraReproduccion(QFrame):
         self.btn_stop.setIcon(qta.icon("mdi6.stop", color="#FF4B2B"))
         self.btn_stop.setIconSize(QSize(25, 25))
         self.btn_stop.setCursor(Qt.CursorShape.PointingHandCursor)
-        
-        # 2. SLIDER DE TIEMPO (Estilo Minimal)
+
         self.slider = QSlider(Qt.Orientation.Horizontal)
         self.slider.setRange(0, 0)
         self.slider.setCursor(Qt.CursorShape.PointingHandCursor)
@@ -77,32 +75,27 @@ class BarraReproduccion(QFrame):
                 background: #00B4D8;
             }
         """)
-        
-        # 3. SELECTOR DE VELOCIDAD
+   
         self.combo_speed = QComboBox()
         self.combo_speed.addItems(["0.5x", "1.0x", "1.25x", "1.5x", "2.0x"])
         self.combo_speed.setCurrentText("1.0x")
         self.combo_speed.setFixedWidth(70)
         self.combo_speed.setCursor(Qt.CursorShape.PointingHandCursor)
-        
-        # 4. ETIQUETA DE TIEMPO
+
         self.lbl_tiempo = QLabel("00:00 / 00:00")
         self.lbl_tiempo.setStyleSheet("color: #888; font-size: 11px; font-family: 'Consolas', monospace;")
-        
-        # Ensamblaje Material
+
         layout.addWidget(self.btn_play)
         layout.addWidget(self.btn_stop)
         layout.addWidget(self.slider, stretch=1)
         layout.addWidget(self.combo_speed)
         layout.addWidget(self.lbl_tiempo)
-        
-        # --- CONEXIONES ---
+
         self.btn_play.clicked.connect(self.toggle_play)
         self.btn_stop.clicked.connect(self.detener_video)
         self.slider.sliderMoved.connect(self.set_posicion_video)
         self.combo_speed.currentTextChanged.connect(self.cambiar_velocidad)
-        
-        # Señales del reproductor
+
         self.reproductor.positionChanged.connect(self.actualizar_posicion_ui)
         self.reproductor.durationChanged.connect(self.actualizar_duracion_ui)
         self.reproductor.playbackStateChanged.connect(self.actualizar_iconos)

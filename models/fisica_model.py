@@ -2,11 +2,11 @@ import math
 
 class FisicaModel:
     def __init__(self):
-        # Valores por defecto basados en Ejercicio 14
-        self.v_auto_mru = 40.0      # m/s (144 km/h)
-        self.a_camion_mrua = 4.0    # m/s^2
-        self.x0_camion = 80.0       # m (adelante del auto)
-        self.v0_camion = 0.0        # m/s (parte del reposo)
+
+        self.v_auto_mru = 40.0
+        self.a_camion_mrua = 4.0
+        self.x0_camion = 80.0
+        self.v0_camion = 0.0 
 
     def calcular_trayectorias(self, t_max=20, paso=0.1):
         """Genera puntos de posición para gráficas"""
@@ -17,9 +17,9 @@ class FisicaModel:
         t = 0
         while t <= t_max:
             tiempos.append(t)
-            # Auto: x = v * t
+
             pos_auto.append(self.v_auto_mru * t)
-            # Camión: x = x0 + v0*t + 0.5*a*t^2
+
             pos_camion.append(self.x0_camion + self.v0_camion * t + 0.5 * self.a_camion_mrua * t**2)
             t += paso
             
@@ -38,7 +38,7 @@ class FisicaModel:
         discriminante = b**2 - 4 * a * c
         
         if discriminante < 0:
-            return None # No se encuentran
+            return None
             
         t1 = (-b - math.sqrt(discriminante)) / (2 * a)
         t2 = (-b + math.sqrt(discriminante)) / (2 * a)

@@ -16,20 +16,17 @@ def main():
     """
     app = QApplication(sys.argv)
 
-    # Inicializamos el Modelo de datos
+
     modelo = FisicaModel()
 
-    # Inicializamos la Vista (ventana principal)
+
     vista = SimuladorWindow()
 
-    # Inicializamos el Controlador pasando el modelo y la vista
-    # Esto vincula los sliders y botones con la lógica física
+
     controlador = MainController(modelo, vista)
 
-    # Desplegamos la interfaz al usuario
     vista.showMaximized()
 
-    # Iniciamos el bucle de eventos de Qt
     sys.exit(app.exec())
 
 if __name__ == "__main__":

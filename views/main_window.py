@@ -16,7 +16,7 @@ class SimuladorWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Simulador Cinemático 1D")
-        # Cargamos los estilos modulares
+
         self.setStyleSheet(StyleLoader.load_styles())
         
         # Inicializamos el modelo de física
@@ -28,8 +28,7 @@ class SimuladorWindow(QMainWindow):
         layout_maestro = QHBoxLayout(widget_central)
         layout_maestro.setContentsMargins(20, 20, 20, 20)
         layout_maestro.setSpacing(20)
-        
-        # --- Sidebar (Panel Izquierdo) ---
+
         sidebar = QFrame()
         sidebar.setObjectName("sidebar")
         sidebar.setFixedWidth(350)
@@ -49,53 +48,42 @@ class SimuladorWindow(QMainWindow):
         col_der = QVBoxLayout()
         col_der.setSpacing(20)
         
-        # Contenedor con STACKED WIDGET para cambiar entre Bienvenida y Reproductor
+
         self.stacked_grafico = QStackedWidget()
         self.stacked_grafico.setObjectName("panel_elevado")
-        
-        # 1. Crear el reproductor de video
+
         self.reproductor = QMediaPlayer()
-        
-        # 2. El widget donde se proyectará el video
+
         self.video_widget = QVideoWidget()
         self.video_widget.setStyleSheet("background-color: #0A0A0A; border-radius: 15px;")
-        
-        # 3. Conectar el reproductor al widget de salida
+
         self.reproductor.setVideoOutput(self.video_widget)
-        
-        # 4. Barra de Reproducción (Controles de Play/Pause, Seek, etc.)
+
         self.barra_video = BarraReproduccion(self.reproductor)
-        
-        # 5. Contenedor que agrupa Video + Controles
+
         self.contenedor_simulacion = QWidget()
         layout_sim = QVBoxLayout(self.contenedor_simulacion)
         layout_sim.setContentsMargins(0, 0, 0, 0)
         layout_sim.setSpacing(10)
         layout_sim.addWidget(self.video_widget)
         layout_sim.addWidget(self.barra_video)
-        
-        # Estado 0: Bienvenida
+
         self.pantalla_bienvenida = WidgetBienvenida()
-        
-        # Estado 2: Cargando (Spinner)
+
         self.pantalla_cargando = WidgetCargando()
-        
-        # Estado 1: Simulación (Reproductor + Barra)
+
         self.stacked_grafico.addWidget(self.pantalla_bienvenida)
         self.stacked_grafico.addWidget(self.contenedor_simulacion)
         self.stacked_grafico.addWidget(self.pantalla_cargando)
-        
-        # Panel de Resultados
+
         self.panel_resultados = PanelResultados()
         
         col_der.addWidget(self.stacked_grafico, stretch=3)
         col_der.addWidget(self.panel_resultados, stretch=1)
 
-        # Restauramos la conexión de los layouts al maestro
         layout_maestro.addWidget(sidebar, stretch=1)
         layout_maestro.addLayout(col_der, stretch=4)
 
-        # Inicializamos el Controlador para conectar todo
         self.controlador = MainController(self.modelo, self)
         
     def iniciar_simulacion(self):

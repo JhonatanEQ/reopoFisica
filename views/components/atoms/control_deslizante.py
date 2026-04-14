@@ -2,17 +2,16 @@ from PyQt6.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLabel, QDoubleSp
 from PyQt6.QtCore import Qt, pyqtSignal
 
 class ControlDeslizante(QWidget):
-    # Señal personalizada que enviará el nuevo valor hacia afuera
+
     valor_cambiado = pyqtSignal(float)
 
     def __init__(self, titulo, min_val, max_val, default_val, unidad, es_ambar=False):
         super().__init__()
-        # --- Layout Principal ---
+
         layout = QVBoxLayout(self)
         layout.setContentsMargins(0, 5, 0, 5)
         layout.setSpacing(8)
 
-        # --- Fila Superior: Título y SpinBox ---
         fila_superior = QHBoxLayout()
         
         self.lbl_titulo = QLabel(titulo)
@@ -37,7 +36,6 @@ class ControlDeslizante(QWidget):
         fila_superior.addWidget(self.spinbox)
         fila_superior.addWidget(self.lbl_unidad)
 
-        # --- Fila Inferior: Slider ---
         self.slider = QSlider(Qt.Orientation.Horizontal)
         self.slider.setRange(int(min_val * 10), int(max_val * 10))
         self.slider.setValue(int(default_val * 10))
@@ -48,12 +46,11 @@ class ControlDeslizante(QWidget):
         layout.addLayout(fila_superior)
         layout.addWidget(self.slider)
 
-        # --- Lógica de Sincronización Interna ---
         self.slider.valueChanged.connect(self._sync_spinbox)
         self.spinbox.valueChanged.connect(self._sync_slider)
 
     def _sync_spinbox(self, value):
-        # Actualiza el spinbox cuando se mueve el slider
+
         self.spinbox.blockSignals(True)
         nuevo_valor = value / 10.0
         self.spinbox.setValue(nuevo_valor)
@@ -61,7 +58,7 @@ class ControlDeslizante(QWidget):
         self.valor_cambiado.emit(nuevo_valor)
 
     def _sync_slider(self, value):
-        # Actualiza el slider cuando se escribe en el spinbox
+
         self.slider.blockSignals(True)
         self.slider.setValue(int(value * 10))
         self.slider.blockSignals(False)
